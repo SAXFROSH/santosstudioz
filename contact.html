@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease forwards;
+}
+
+/* Slide-up animation */
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 1.3s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Santos Studioz</title>
@@ -95,6 +131,41 @@
 
     </div>
 </div>
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/234YOURNUMBER" class="whatsapp-float" target="_blank">
+    💬
+</a>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/2347045267739" class="whatsapp-float" target="_blank">
+    💬
+</a>
+
+<style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25D366;
+        color: white;
+        font-size: 28px;
+        text-decoration: none;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        z-index: 999;
+        transition: 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        background: #1eb659;
+    }
+</style>
 
 </body>
 </html>
