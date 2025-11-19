@@ -64,7 +64,7 @@
             border: none;
             font-size: 16px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 10px;
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
@@ -128,25 +128,30 @@
         <h2>Book a Photography Session</h2>
         <h3>Our Packages</h3>
 
+        <!-- PACKAGES WITH PAYMENT BUTTONS -->
         <div class="packages">
             <div class="card">
                 <h4>Basic — ₦20,000</h4>
                 <p>10 edited pictures<br>30-minute session</p>
+                <button onclick="payWithPaystack(20000, 'Basic Package')">Pay ₦20,000</button>
             </div>
 
             <div class="card">
                 <h4>Standard — ₦35,000</h4>
                 <p>20 edited pictures<br>1-hour session</p>
+                <button onclick="payWithPaystack(35000, 'Standard Package')">Pay ₦35,000</button>
             </div>
 
             <div class="card">
                 <h4>Premium — ₦50,000</h4>
                 <p>30 edited pictures<br>1.5-hour session<br>Studio + Outdoor</p>
+                <button onclick="payWithPaystack(50000, 'Premium Package')">Pay ₦50,000</button>
             </div>
         </div>
 
         <!-- THE FORM -->
-        <form id="bookingForm" action="https://formsubmit.co/ogunjirin.opemiposi@lmu.edu.ng" method="POST" enctype="multipart/form-data">
+        <form id="bookingForm" action="https://formsubmit.co/ogunjirinope@gmail.com" 
+              method="POST" enctype="multipart/form-data">
 
             <!-- Hidden Settings -->
             <input type="hidden" name="_captcha" value="false">
@@ -199,15 +204,14 @@
             setTimeout(() => successBox.style.display = "none", 5000);
         });
     </script>
-<script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <!-- PAYSTACK -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 
     <script>
     function payWithPaystack(amount, packageName) {
         let handler = PaystackPop.setup({
-            
-            
             key: '<<<<pk_live_aba97564788c9a683cbbc426e774df5dfbdb1216>>>>', 
-            
             email: document.querySelector('input[name="Email"]').value || "customer@example.com",
             amount: amount * 100,
             currency: 'NGN',
@@ -231,5 +235,6 @@
         handler.openIframe();
     }
     </script>
+
 </body>
 </html>

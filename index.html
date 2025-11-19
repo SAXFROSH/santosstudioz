@@ -1,363 +1,241 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Santos Studioz | Luxury Photography</title>
 
-
-
     <!-- Google Font -->
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-
-
     <style>
-
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
             font-family: 'Poppins', sans-serif;
-
         }
-
-
 
         body {
-
             background: #fff;
-
         }
-
-
 
         /* NAVBAR */
-
         header {
-
             width: 100%;
-
             padding: 20px 60px;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             background: #fff;
-
             border-bottom: 1px solid #eee;
-
             position: sticky;
-
             top: 0;
-
             z-index: 100;
-
         }
-
-
 
         .logo {
-
             font-size: 28px;
-
             font-weight: 800;
-
             color: gold;
-
             letter-spacing: 1.5px;
-
         }
-
-
 
         nav ul {
-
             display: flex;
-
             gap: 30px;
-
             list-style: none;
-
         }
-
-
 
         nav ul li a {
-
             text-decoration: none;
-
             color: #000;
-
             font-weight: 500;
-
             transition: 0.3s;
-
         }
-
-
 
         nav ul li a:hover {
-
             color: gold;
-
         }
 
-
-
-    B.book-btn {
-    background: gold;
-    color: black;
-    padding: 10px 18px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 15px;
-    white-space: nowrap; /* FORCE one line */
-    display: inline-block; /* Prevent wrapping */
-}
-
-.navbar li {
-    margin-right: 18px;
-}
-
-
-        /* HERO SECTION */
+        /* ============= PREMIUM SLIDESHOW HERO SECTION (10 IMAGES) ============= */
 
         .hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 
+    /* STATIC background that shows immediately */
+    background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg') center/cover no-repeat;
+}
+        .slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
             width: 100%;
+            z-index: 1;
+        }
 
-            height: 90vh;
+        .slide {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: fadeSlide 60s infinite;
+        }
 
-            background: url('https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg') center/cover no-repeat;
+        /* 10 slides delayed by 6 seconds each */
+        .slide:nth-child(1) { animation-delay: 0s; opacity: 1 !important;}
+        .slide:nth-child(2)  { animation-delay: 6s; }
+        .slide:nth-child(3)  { animation-delay: 12s; }
+        .slide:nth-child(4)  { animation-delay: 18s; }
+        .slide:nth-child(5)  { animation-delay: 24s; }
+        .slide:nth-child(6)  { animation-delay: 30s; }
+        .slide:nth-child(7)  { animation-delay: 36s; }
+        .slide:nth-child(8)  { animation-delay: 42s; }
+        .slide:nth-child(9)  { animation-delay: 48s; }
+        .slide:nth-child(10) { animation-delay: 54s; }
 
-            display: flex;
+        /* Faster fade transition */
+        @keyframes fadeSlide {
+            0%   { opacity: 0; }
+            5%   { opacity: 1; }
+            25%  { opacity: 1; }
+            30%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
 
-            flex-direction: column;
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.55);
+            z-index: 2;
+        }
 
-            justify-content: center;
-
-            padding-left: 60px;
-
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
             color: white;
-
-            text-shadow: 0 0 8px rgba(0,0,0,0.7);
-
+            animation: fadeIn 2s ease-in-out;
+            margin-top: 40px;
         }
 
-
-
-        .hero h1 {
-
-            font-size: 55px;
-
-            font-weight: 800;
-
-            max-width: 600px;
-
-            line-height: 1.2;
-
-        }
-
-
-
-        .hero p {
-
-            font-size: 20px;
-
-            margin: 20px 0;
-
-        }
-
-
-
-        .hero-btns {
-
-            display: flex;
-
-            gap: 20px;
-
-            margin-top: 20px;
-
-        }
-
-
-
-        .btn-main {
-
-            padding: 14px 25px;
-
-            background: gold;
-
-            color: black;
-
-            font-weight: 600;
-
-            border-radius: 6px;
-
-            text-decoration: none;
-
-            border: 2px solid gold;
-
-            transition: 0.3s;
-
-        }
-
-
-
-        .btn-main:hover {
-
-            background: #000;
-
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: bold;
             color: gold;
-
+            animation: slideDown 1.5s ease-in-out;
         }
 
-
-
-        .btn-outline {
-
-            padding: 14px 25px;
-
-            border: 2px solid gold;
-
-            background: transparent;
-
-            color: gold;
-
-            font-weight: 600;
-
-            border-radius: 6px;
-
-            text-decoration: none;
-
-            transition: 0.3s;
-
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #f3f3f3;
+            animation: fadeIn 2.7s ease-in-out;
         }
 
-
-
-        .btn-outline:hover {
-
+        .hero-btn {
+            padding: 14px 28px;
             background: gold;
-
             color: black;
-
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            font-size: 18px;
+            transition: 0.3s;
+            animation: popIn 3s ease-in-out;
         }
 
+        .hero-btn:hover {
+            background: #ffdd55;
+            transform: scale(1.08);
+        }
 
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
 
         /* FOOTER */
-
         footer {
-
             background: #000;
-
             padding: 40px 20px;
-
             text-align: center;
-
             color: #ccc;
-
             margin-top: 60px;
-
         }
 
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
+        }
     </style>
-
 </head>
-
-
 
 <body>
 
-
-
 <!-- NAVBAR -->
-
 <header>
-
-    <div class="logo">SANTOS STUDIO</div>
-
+    <div class="logo">SANTOS STUDIOZ</div>
     <nav>
-
         <ul>
-
             <li><a href="#">Home</a></li>
-
             <li><a href="about.html">About</a></li>
-
             <li><a href="services.html">Services</a></li>
-
-            <li><a href="#">Portfolio</a></li>
-
+            <li><a href="gallery.html">Portfolio</a></li>
             <li><a href="#">Pricing</a></li>
-
             <li><a href="booking.html">Book Now</a></li>
-
-           <a href="contact.html">Contact</a>
-
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="#">Testimonials</a></li>
-
-           <li><a href="gallery.html">Gallery</a></li>
-
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="#">Locations</a></li>
-
         </ul>
-
     </nav>
-
 </header>
 
-
-
-<!-- HERO SECTION -->
-
+<!-- ============= HERO SECTION (10-IMAGE SLIDESHOW) ============= -->
 <section class="hero">
 
-    <h1>Capturing Moments That Last Forever</h1>
+    <div class="slides">
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/2754848/pexels-photo-2754848.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/3365226/pexels-photo-3365226.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/4585425/pexels-photo-4585425.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/1055613/pexels-photo-1055613.jpeg');"></div>
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg');"></div>
+    </div>
 
-    <p>Premium Photography Services.</p>
+    <div class="hero-overlay"></div>
 
-
-
-    <div class="hero-btns">
-
-        <a href="#" class="btn-main">Book a Photographer</a>
-
-        <a href="#" class="btn-outline">View Portfolio</a>
-
+    <div class="hero-content">
+        <h1>Capturing Moments,<br>Creating Memories</h1>
+        <p>Quality over quantity</p>
+        <a href="gallery.html" class="hero-btn">View Portfolio</a>
     </div>
 
 </section>
 
-
-
 <!-- FOOTER -->
-
 <footer>
-
     © 2025 Santos Studioz — All Rights Reserved.
-
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/234YOURNUMBER" class="whatsapp-float" target="_blank">
-    💬
-</a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/234YOURNUMBER" class="whatsapp-float" target="_blank">💬</a>
 
 <style>
     .whatsapp-float {
@@ -384,31 +262,6 @@
         background: #1eb659;
     }
 </style>
-<!-- ===================== PREMIUM FOOTER ===================== -->
-<footer class="footer">
-
-    <!-- GOLD ANIMATED LINE -->
-    <div class="gold-line"></div>
-
-    <!-- LOGO -->
-    <div class="footer-logo">
-      <img src="logo.png" alt="Santos Studioz Logo">  </div>
-
-    <!-- SOCIAL ICONS -->
-    <div class="footer-socials">
-        <a href="https://instagram.com/saxfrosh_" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@saxfrosh_" target="_blank">TikTok</a>
-        <a href="https://wa.me/2347045267739" target="_blank">WhatsApp</a>
-        
-    </div>
-
-    <!-- COPYRIGHT -->
-    <p class="copyright">
-        © 2025 Santos Studioz. All Rights Reserved.
-    </p>
-</footer>
-
-<!-- ===================== FOOTER STYLE ===================== -->
 <style>
 
 .footer {
@@ -486,5 +339,4 @@ footer p {
 
 </style>
 </body>
-
 </html>
