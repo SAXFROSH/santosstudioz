@@ -146,7 +146,7 @@
         </div>
 
         <!-- THE FORM -->
-        <form id="bookingForm" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" enctype="multipart/form-data">
+        <form id="bookingForm" action="https://formsubmit.co/ogunjirin.opemiposi@lmu.edu.ng" method="POST" enctype="multipart/form-data">
 
             <!-- Hidden Settings -->
             <input type="hidden" name="_captcha" value="false">
@@ -199,6 +199,37 @@
             setTimeout(() => successBox.style.display = "none", 5000);
         });
     </script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
 
+    <script>
+    function payWithPaystack(amount, packageName) {
+        let handler = PaystackPop.setup({
+            
+            
+            key: '<<<<pk_live_aba97564788c9a683cbbc426e774df5dfbdb1216>>>>', 
+            
+            email: document.querySelector('input[name="Email"]').value || "customer@example.com",
+            amount: amount * 100,
+            currency: 'NGN',
+            ref: 'SSZ-' + Math.floor((Math.random() * 1000000000) + 1),
+            metadata: {
+                custom_fields: [
+                    {
+                        display_name: "Selected Package",
+                        variable_name: "package",
+                        value: packageName
+                    }
+                ]
+            },
+            callback: function(response){
+                alert("Payment Successful! Reference: " + response.reference);
+            },
+            onClose: function(){
+                alert("Payment Cancelled.");
+            }
+        });
+        handler.openIframe();
+    }
+    </script>
 </body>
 </html>
