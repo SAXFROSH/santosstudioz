@@ -14,14 +14,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
         body {
             background: #fff;
         }
 
-        /* NAVBAR */
+        /* ======================= NAVBAR ======================= */
         header {
             width: 100%;
             padding: 20px 60px;
@@ -59,64 +59,55 @@
             color: gold;
         }
 
-        /* ============= PREMIUM SLIDESHOW HERO SECTION (10 IMAGES) ============= */
+        /* ======================= HERO SLIDESHOW ======================= */
 
         .hero {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg') center/cover no-repeat;
+        }
 
-    /* STATIC background that shows immediately */
-    background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg') center/cover no-repeat;
-}
         .slides {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
+            inset: 0;
             z-index: 1;
         }
 
         .slide {
             position: absolute;
-            height: 100%;
-            width: 100%;
+            inset: 0;
             background-size: cover;
             background-position: center;
             opacity: 0;
             animation: fadeSlide 60s infinite;
         }
 
-        /* 10 slides delayed by 6 seconds each */
-        .slide:nth-child(1) { animation-delay: 0s; opacity: 1 !important;}
-        .slide:nth-child(2)  { animation-delay: 6s; }
-        .slide:nth-child(3)  { animation-delay: 12s; }
-        .slide:nth-child(4)  { animation-delay: 18s; }
-        .slide:nth-child(5)  { animation-delay: 24s; }
-        .slide:nth-child(6)  { animation-delay: 30s; }
-        .slide:nth-child(7)  { animation-delay: 36s; }
-        .slide:nth-child(8)  { animation-delay: 42s; }
-        .slide:nth-child(9)  { animation-delay: 48s; }
+        /* 10 slides with 6-second delays */
+        .slide:nth-child(1) { animation-delay: 0s; opacity: 1 !important; }
+        .slide:nth-child(2) { animation-delay: 6s; }
+        .slide:nth-child(3) { animation-delay: 12s; }
+        .slide:nth-child(4) { animation-delay: 18s; }
+        .slide:nth-child(5) { animation-delay: 24s; }
+        .slide:nth-child(6) { animation-delay: 30s; }
+        .slide:nth-child(7) { animation-delay: 36s; }
+        .slide:nth-child(8) { animation-delay: 42s; }
+        .slide:nth-child(9) { animation-delay: 48s; }
         .slide:nth-child(10) { animation-delay: 54s; }
 
-        /* Faster fade transition */
         @keyframes fadeSlide {
-            0%   { opacity: 0; }
-            5%   { opacity: 1; }
-            25%  { opacity: 1; }
-            30%  { opacity: 0; }
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            25% { opacity: 1; }
+            30% { opacity: 0; }
             100% { opacity: 0; }
         }
 
         .hero-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.55);
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
             z-index: 2;
         }
 
@@ -125,8 +116,7 @@
             z-index: 3;
             text-align: center;
             color: white;
-            animation: fadeIn 2s ease-in-out;
-            margin-top: 40px;
+            margin-top: 80px;
         }
 
         .hero-content h1 {
@@ -139,8 +129,7 @@
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 30px;
-            color: #f3f3f3;
-            animation: fadeIn 2.7s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .hero-btn {
@@ -152,39 +141,232 @@
             border-radius: 6px;
             font-size: 18px;
             transition: 0.3s;
-            animation: popIn 3s ease-in-out;
         }
 
         .hero-btn:hover {
-            background: #ffdd55;
             transform: scale(1.08);
         }
 
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
-
-        /* FOOTER */
-        footer {
-            background: #000;
-            padding: 40px 20px;
-            text-align: center;
-            color: #ccc;
-            margin-top: 60px;
+        @keyframes slideDown { 
+            from { opacity: 0; transform: translateY(-40px); } 
+            to { opacity: 1; transform: translateY(0); } 
         }
 
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .hero-content p { font-size: 1rem; }
+        @keyframes fadeIn { 
+            from { opacity: 0; } 
+            to { opacity: 1; } 
+        }
+
+        /* ======================= ABOUT PREVIEW ======================= */
+        .about-section {
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* ======================= SERVICES PREVIEW ======================= */
+        .services-section {
+            padding: 80px 60px;
+            background: #111;
+            text-align: center;
+            color: white;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 40px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            background: #000;
+            border: 1px solid gold;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 12px gold;
+        }
+
+        .service-card h3 {
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        /* ======================= PORTFOLIO PREVIEW ======================= */
+        .portfolio-section {
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .portfolio-section h2 {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 25px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* ======================= TEAM SECTION ======================= */
+        .team-section {
+            padding: 80px 60px;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.5rem;
+            color: gold;
+        }
+
+        .team-container {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+        }
+
+        .team-card {
+            background: #000;
+            border: 1px solid gold;
+            border-radius: 12px;
+            padding: 20px;
+            transition: 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px gold;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid gold;
+        }
+
+        .team-card h3 {
+            margin-top: 12px;
+            color: gold;
+        }
+
+        .team-card p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* ================= BOOK CTA ================= */
+        .cta-section {
+            padding: 60px;
+            text-align: center;
+            background: #000;
+            color: white;
+        }
+
+        .cta-section a {
+            background: gold;
+            padding: 15px 30px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        /* ======================= FOOTER ======================= */
+        .footer {
+            background: url('https://images.pexels.com/photos/7130556/pexels-photo-7130556.jpeg') center/cover no-repeat;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer::before {
+            content: "";
+            inset: 0;
+            position: absolute;
+            background: rgba(0,0,0,0.7);
+            z-index: -1;
+        }
+
+        .footer-logo img {
+            width: 130px;
+            margin: 20px 0;
+        }
+
+        .footer-socials a {
+            color: gold;
+            margin: 0 12px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* ================== WHATSAPP FLOAT ================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            z-index: 999;
         }
     </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ====================== NAVBAR ====================== -->
 <header>
     <div class="logo">SANTOS STUDIOZ</div>
     <nav>
@@ -193,30 +375,26 @@
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="gallery.html">Portfolio</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="booking.html">Book Now</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#">Locations</a></li>
+            <li><a href="booking.html">Book Now</a></li>
         </ul>
     </nav>
 </header>
 
-<!-- ============= HERO SECTION (10-IMAGE SLIDESHOW) ============= -->
+<!-- ====================== HERO ====================== -->
 <section class="hero">
 
     <div class="slides">
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/2754848/pexels-photo-2754848.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/3365226/pexels-photo-3365226.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/4585425/pexels-photo-4585425.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/1055613/pexels-photo-1055613.jpeg');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/2754848/pexels-photo-2754848.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/3365226/pexels-photo-3365226.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/4585425/pexels-photo-4585425.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/1055613/pexels-photo-1055613.jpeg');"></div>
+        <div class="slide" style="background-image:url('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg');"></div>
     </div>
 
     <div class="hero-overlay"></div>
@@ -229,114 +407,120 @@
 
 </section>
 
-<!-- FOOTER -->
-<footer>
-    © 2025 Santos Studioz — All Rights Reserved.
+<!-- ====================== ABOUT PREVIEW ====================== -->
+<section class="about-section">
+    <h2>About Santos Studioz</h2>
+    <p>
+        Santos Studioz delivers high-end photography with a blend of creativity, precision, and storytelling.
+        Every shot is crafted to capture emotion, personality, and unforgettable moments in the most artistic way.
+    </p>
+</section>
+
+<!-- ====================== SERVICES ====================== -->
+<section class="services-section">
+    <h2>Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <h3>Outdoor Shoot</h3>
+            <p>Experience natural lighting, beautiful scenery, and creative angles that bring your personality to life.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Graduation Shoot</h3>
+            <p>Celebrate your academic achievement with high-quality portraits full of joy and pride.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Wedding Photography</h3>
+            <p>Elegant, emotional, beautifully edited wedding visuals that tell your love story.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Fashion Shoot</h3>
+            <p>Stylish fashion visuals with expert lighting, posing, and professional retouching.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ====================== PORTFOLIO PREVIEW ====================== -->
+<section class="portfolio-section">
+    <h2>Recent Work</h2>
+
+   <div class="portfolio-grid">
+    <img src="portfolio/recent1.jpg">
+    <img src="portfolio/recent2.jpg">
+    <img src="portfolio/recent3.jpg">
+    <img src="portfolio/recent4.jpg">
+    <img src="portfolio/recent5.jpg">
+    <img src="portfolio/recent6.jpg">
+</div>
+</section>
+
+<!-- ====================== TEAM SECTION ====================== -->
+<section class="team-section">
+    <h2>Meet the Team</h2>
+
+    <div class="team-container">
+
+        <div class="team-card">
+            <img src="images/Lead Photographer.png">
+            <h3>Malik</h3>
+            <p>Lead Photographer</p>
+        </div>
+
+        <div class="team-card">
+            <img src="images/Assistant.png">
+            <h3>Deji</h3>
+            <p>Assistant</p>
+        </div>
+
+        <div class="team-card">
+            <img src="images/ceo.png" >
+            <h3>Santos</h3>
+            <p>CEO</p>
+        </div>
+
+        <div class="team-card">
+            <img src="images/Editor.png">
+            <h3>Sarah</h3>
+            <p>Editor</p>
+        </div>
+
+        <div class="team-card">
+           <img src="images/Director.png">
+            <h3>Yusuf</h3>
+            <p>Director</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ====================== CTA ====================== -->
+<section class="cta-section">
+    <h2>Ready to Book Your Session?</h2>
+    <a href="booking.html">Book a Photoshoot</a>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="footer">
+    <div class="footer-logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="footer-socials">
+        <a href="https://instagram.com/saxfrosh_" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@saxfrosh_" target="_blank">TikTok</a>
+        <a href="https://wa.me/2347045267739" target="_blank">WhatsApp</a>
+    </div>
+
+    <p>© 2025 Santos Studioz. All Rights Reserved.</p>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/234YOURNUMBER" class="whatsapp-float" target="_blank">💬</a>
 
-<style>
-    .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #25D366;
-        color: white;
-        font-size: 28px;
-        text-decoration: none;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-        z-index: 999;
-        transition: 0.2s ease;
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.1);
-        background: #1eb659;
-    }
-</style>
-<style>
-
-.footer {
-    background: url('https://images.pexels.com/photos/7130556/pexels-photo-7130556.jpeg') center/cover no-repeat;
-    padding: 40px 20px;
-    text-align: center;
-    color: white;
-    position: relative;
-    z-index: 10;
-}
-
-/* DARK OVERLAY SO TEXT IS READABLE */
-.footer::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: -1;
-}
-
-/* GOLD LINE ANIMATION */
-.gold-line {
-    width: 0%;
-    height: 3px;
-    background: gold;
-    margin: auto;
-    animation: expand 2s forwards ease-in-out;
-}
-
-@keyframes expand {
-    from { width: 0%; }
-    to   { width: 80%; }
-}
-
-/* LOGO */
-.footer-logo img {
-    width: 120px;
-    margin: 20px 0;
-    filter: drop-shadow(0px 0px 5px gold);
-}
-
-/* SOCIAL LINKS */
-.footer-socials a {
-    margin: 0 10px;
-    color: gold;
-    font-size: 18px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.footer-socials a:hover {
-    color: #ffdd55;
-    text-shadow: 0 0 8px gold;
-}
-
-footer p {
-    color: #ddd;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-/* MOBILE RESPONSIVE FOOTER */
-@media (max-width: 768px) {
-    .footer-socials a {
-        display: block;
-        margin: 10px 0;
-        font-size: 20px;
-    }
-
-    .footer-logo img {
-        width: 100px;
-    }
-}
-
-</style>
 </body>
 </html>
